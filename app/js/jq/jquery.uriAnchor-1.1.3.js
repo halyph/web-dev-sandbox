@@ -7,6 +7,8 @@
  * Dual licensed under the MIT or GPL Version 2
  * http://jquery.org/license
  *
+ * https://github.com/mmikowski/urianchor
+ *
  * Versions
  *  1.1.1-3 - Initial jQuery plugin site releases
  *
