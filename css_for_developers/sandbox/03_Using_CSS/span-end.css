@@ -33,3 +33,11 @@ p {
     border: 1px solid #f99;
     padding: 1px 3px;
 }
+
+#sidebar {
+    float: right;
+    background-color: #ffc;
+    width: 25%;
+    border: 1px solid red;
+    padding: 10px;
+}
