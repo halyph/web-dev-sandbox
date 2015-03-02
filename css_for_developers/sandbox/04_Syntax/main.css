@@ -59,7 +59,7 @@ div.sidebar p {
     color: green;
 }
 
-input[type="submit"] {
+input[type="submit "] {
     color: blue;
     width: 100px;
 }

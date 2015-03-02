@@ -67,6 +67,7 @@ div#boxText {
     width: 200px;
     height: 200px;
     overflow: hidden;
+    /*padding: 5px;*/
 }
 
 div#boxText p {
