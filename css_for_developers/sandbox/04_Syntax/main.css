@@ -46,3 +46,20 @@ a:hover {
     color: blue;
     text-decoration: underline;
 }
+
+div.sidebar {
+    width: 200px;
+    float: right;
+    background-color: #ffc;
+    border: 1px solid #c99;
+    padding: 5px;
+}
+
+div.sidebar p {
+    color: green;
+}
+
+input[type="submit"] {
+    color: blue;
+    width: 100px;
+}
