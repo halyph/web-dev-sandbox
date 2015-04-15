@@ -1,2 +1,3 @@
 - **spa_js_end_to_end** A companion repo for ["Single Page Web Applications - JavaScript end-to-end" book](http://www.manning.com/mikowski/)
 - **css_for_developers** Lynda.com - CSS For Developers
+- **pro_angular_js** A companion repo for [Pro AngularJS, by Adam Freeman book](http://www.apress.com/9781430264484)
