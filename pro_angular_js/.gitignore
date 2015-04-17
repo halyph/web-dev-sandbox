@@ -3,6 +3,10 @@
 ######################
 /src/main/webapp/dist
 
+# Deployd resources
+data/
+.dpd/
+
 ######################
 # Node
 ######################
