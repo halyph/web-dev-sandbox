@@ -4,8 +4,8 @@
 /src/main/webapp/dist
 
 # Deployd resources
-data/
-.dpd/
+#data/
+#.dpd/
 
 ######################
 # Node
