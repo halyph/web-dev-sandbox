@@ -5,45 +5,35 @@
     <link href="bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-theme.css" rel="stylesheet" />
     <script src="angular.js"></script>
+    <script src="controllers.js"></script>
+    <script src="filters.js"></script>
     <script>
 
-        var myApp = angular.module("exampleApp", []);
+        var myApp = angular.module("exampleApp",
+                ["exampleApp.Controllers", "exampleApp.Filters",
+                    "exampleApp.Services", "exampleApp.Directives"]);
 
-        myApp.controller("dayCtrl", function ($scope, days) {
-            $scope.day = days.today;
-        });
+        angular.module("exampleApp.Directives", [])
+                .directive("highlight", function ($filter) {
 
-        myApp.controller("tomorrowCtrl", function ($scope, days) {
-            $scope.day = days.tomorrow;
-        });
+                    var dayFilter = $filter("dayName");
 
-        myApp.directive("highlight", function ($filter) {
+                    return function (scope, element, attrs) {
+                        if (dayFilter(scope.day) == attrs["highlight"]) {
+                            element.css("color", "red");
+                        }
+                    }
+                });
 
-            var dayFilter = $filter("dayName");
-
-            return function (scope, element, attrs) {
-                if (dayFilter(scope.day) == attrs["highlight"]) {
-                    element.css("color", "red");
-                }
-            }
-        });
-
-        myApp.filter("dayName", function () {
-            var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday",
-                "Thursday", "Friday", "Saturday"];
-            return function (input) {
-                return angular.isNumber(input) ? dayNames[input] : input;
-            };
-        });
 
         var now = new Date();
         myApp.value("nowValue", now);
 
-        myApp.service("days", function (nowValue) {
-            this.today = nowValue.getDay();
-            this.tomorrow = this.today + 1;
-        });
-
+        angular.module("exampleApp.Services", [])
+                .service("days", function (nowValue) {
+                    this.today = nowValue.getDay();
+                    this.tomorrow = this.today + 1;
+                });
 
     </script>
 </head>
