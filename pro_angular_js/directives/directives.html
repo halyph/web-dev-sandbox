@@ -57,5 +57,25 @@
     </table>
 </div>
 
+
+<div id="todoPanel2" class="panel" ng-controller="defaultCtrl">
+    <h3 class="panel-header">To Do List</h3>
+
+    <table class="table">
+        <tbody>
+        <tr ng-repeat-start="item in todos">
+            <td>This is item {{$index}}</td>
+        </tr>
+        <tr>
+            <td>The action is: {{item.action}}</td>
+        </tr>
+        <tr ng-repeat-end>
+            <td>Item {{$index}} is {{$item.complete? '' : "not "}} complete</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
 </body>
 </html>
