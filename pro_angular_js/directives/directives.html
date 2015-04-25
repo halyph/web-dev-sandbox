@@ -39,22 +39,7 @@
         <input name="secondItem" class="form-control" ng-model="todos[0].action" />
     </div>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Action</th>
-            <th>Done</th>
-            <th>Done If</th>
-        </tr>
-        </thead>
-        <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even'">
-            <td>{{$index + 1}}</td>
-            <td>{{item.action}}</td>
-            <td>{{item.complete}}</td>
-            <td><span ng-if="$first || $last">{{item.complete}}</span></td>
-        </tr>
-    </table>
+    <ng-include src="'table.html'"></ng-include>
 </div>
 
 
