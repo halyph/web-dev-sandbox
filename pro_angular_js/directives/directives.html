@@ -14,6 +14,10 @@
                         { action: "Buy running shoes", complete: true },
                         { action: "Buy flowers", complete: false },
                         { action: "Call family", complete: false }];
+
+                    $scope.viewFile = function () {
+                        return $scope.showList ? "list.html" : "table.html";
+                    };
                 });
     </script>
     <style>
@@ -25,21 +29,16 @@
 <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
     <h3 class="panel-header">To Do List</h3>
     <div class="well">
-        <div>The first item is: {{todos[0].action}}</div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="showList">
+                Use the list view
+            </label>
+        </div>
     </div>
 
-    <div class="form-group well">
-        <label for="firstItem">Set First Item:</label>
-        <input name="firstItem" class="form-control" ng-model="todos[0].action" />
-    </div>
+    <ng-include src="viewFile()"></ng-include>
 
-
-    <div class="form-group well">
-        <label for="secondItem">Set First Item:</label>
-        <input name="secondItem" class="form-control" ng-model="todos[0].action" />
-    </div>
-
-    <ng-include src="'table.html'"></ng-include>
 </div>
 
 
