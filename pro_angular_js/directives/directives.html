@@ -18,6 +18,10 @@
                     $scope.viewFile = function () {
                         return $scope.showList ? "list.html" : "table.html";
                     };
+
+                    $scope.reportChange = function () {
+                        console.log("Displayed content: " + $scope.viewFile());
+                    }
                 });
     </script>
     <style>
@@ -37,7 +41,7 @@
         </div>
     </div>
 
-    <ng-include src="viewFile()"></ng-include>
+    <ng-include src="viewFile()" onload="reportChange()"></ng-include>
 
 </div>
 
