@@ -35,11 +35,6 @@
         <input name="secondItem" class="form-control" ng-model="todos[0].action" />
     </div>
 
-</div>
-
-<div id="todoPanel" class="panel" ng-controller="defaultCtrl">
-    <h3 class="panel-header">To Do List</h3>
-
     <table class="table">
         <thead>
         <tr>
@@ -49,11 +44,12 @@
         </thead>
         <tbody>
         <tr ng-repeat="item in todos">
-            <td ng-repeat="prop in item">{{prop}}</td>
+            <td ng-repeat="(key, value) in item">
+                {{key}}={{value}}
+            </td>
         </tr>
         </tbody>
     </table>
-
 </div>
 
 </body>
