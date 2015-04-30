@@ -31,19 +31,18 @@
         </label>
     </div>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead>
         <tr><th>#</th><th>Action</th><th>Done</th></tr>
         </thead>
-        <tr ng-repeat="item in todos">
+        <tr ng-repeat="item in todos | filter: {complete: 'false'}">
             <td>{{$index + 1}}</td>
             <td>{{item.action}}</td>
-            <td>
-                <span ng-hide="item.complete">(Incomplete)</span>
-                <span ng-show="item.complete">(Done)</span>
-            </td>
+            <td>{{item.complete}}</td>
         </tr>
     </table>
+
+
 </div>
 </body>
 </html>
