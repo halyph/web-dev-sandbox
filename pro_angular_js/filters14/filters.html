@@ -24,6 +24,13 @@
                     $scope.myCustomSorter = function (item) {
                         return item.expiry < 5 ? 0 : item.price;
                     }
+                    $scope.limitVal = "5";
+                    $scope.limitRange = [];
+                    for (var i = (0 - $scope.products.length) ;
+                         i <= $scope.products.length; i++) {
+                        $scope.limitRange.push(i.toString());
+                    }
+
                 });
     </script>
 
@@ -51,7 +58,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="p in products | orderBy:[myCustomSorter, '-price']">
+            <tr ng-repeat="p in products | orderBy:[myCustomSorter, '-price'] | limitTo: limitVal">
                 <td>{{p.name}}</td>
                 <td>{{p.category}}</td>
                 <td>{{p.expiry}}</td>
