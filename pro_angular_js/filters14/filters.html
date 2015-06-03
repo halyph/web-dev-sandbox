@@ -21,18 +21,12 @@
                         { name: "Whiskey", category: "Drinks", price: 45.99, expiry: 365 }
                     ];
 
-                    $scope.limitVal = "5";
-                    $scope.limitRange = [];
-                    for (var i = (0 - $scope.products.length) ;
-                         i <= $scope.products.length; i++) {
-                        $scope.limitRange.push(i.toString());
+                    $scope.myCustomSorter = function (item) {
+                        return item.expiry < 5 ? 0 : item.price;
                     }
-
-                    $scope.selectItems = function (item) {
-                        return item.category == "Fish" || item.name == "Beer";
-                    };
                 });
     </script>
+
 </head>
 <body ng-controller="defaultCtrl">
 <div class="panel panel-default">
@@ -57,12 +51,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="p in products | filter:selectItems">
+            <tr ng-repeat="p in products | orderBy:[myCustomSorter, '-price']">
                 <td>{{p.name}}</td>
                 <td>{{p.category}}</td>
                 <td>{{p.expiry}}</td>
                 <td class="text-right">{{p.price | currency }}</td>
             </tr>
+
+
             </tbody>
         </table>
     </div>
