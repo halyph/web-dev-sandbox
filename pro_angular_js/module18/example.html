@@ -3,10 +3,11 @@
 <head>
     <title>Services and Modules</title>
     <script src="angular.js"></script>
+    <script src="directives.js"></script>
     <link href="bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-theme.css" rel="stylesheet" />
     <script>
-        angular.module("exampleApp", [])
+        angular.module("exampleApp", ["customDirectives"])
                 .controller("defaultCtrl", function ($scope) {
                     $scope.data = {
                         cities: ["London", "New York", "Paris"],
@@ -18,7 +19,6 @@
                     });
                 });
     </script>
-    <script src="directives.js"></script>
 </head>
 
 <body ng-controller="defaultCtrl">
